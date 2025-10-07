@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage </title>
+</head>
+
+<body>
+    <h1> What is Web Storage?</h1>
+    <p>Web Storage is a way for websites to store data directly in the browser.
+        It provides two main storage options:
+    </p>
+    <ul>
+        <li><b>localStorage</b></li>
+        <li><b>sessionStorage</b></li>
+    </ul>
+    <p>Both allow you to store key-value pairs in the browser.</p>
+
+
+
+    <h2>localStorage</h2>
+    <ul>
+        <li>Data is<b>stored permanently</b>in the browser until it is manually cleared (by code or user).</li>
+        <li>Even if the browser is closed and reopened, the data remains.</li>
+        <li>Storage limit: ~5MB (varies by browser).</li>
+    </ul>
+
+
+    <script>
+        // Save a simple string
+        localStorage.setItem("username", "Kavy");
+
+        // Save a number
+        localStorage.setItem("age", 21);
+
+        // Save an object (must be converted to JSON)
+        let user = { name: "Kavy", role: "Developer" };
+        localStorage.setItem("userData", JSON.stringify(user));
+
+
+    </script>
+
+</body>
+
+</html>
