@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Food Menu</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1> Food Menu</h1>
+    <div class="menu" id="menu">
+
+    </div>
+
+    <script>
+        // Array of food items
+        const foods = [
+            {
+                title: "Burger",
+                img: "Burger.png"
+            },
+            {
+                title: "Cake",
+                img: "Cake.png"
+            },
+            {
+                title: "Coffee",
+                img: "Coffee.png"
+            },
+            {
+                title: "Dhokla",
+                img: "Dhokla.png"
+            },
+            {
+                title: "Dosa",
+                img: "Dosa.png"
+            },
+            {
+                title: "Juice",
+                img: "Juice.png"
+            },
+
+        ];
+
+        let menu = document.getElementById("menu")
+
+        foods.forEach(element => {
+            menu.innerHTML +=
+                `<img src="../${element.img}" alt="" srcset="">`
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>
