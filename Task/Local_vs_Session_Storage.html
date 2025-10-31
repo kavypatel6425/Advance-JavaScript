@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local vs Session Storage</title>
+
+    <style>
+        
+
+        body.dark_mode{
+            background-color: black;
+            color: white;
+        }
+        body.light_mode{
+            background-color: white;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <h2>Q1. Theory (2 Marks each)</h2>
+
+
+    <h3>1. Define localStorage and sessionStorage.</h3>
+    <p><b>localStorage:</b> Data is stored permanently in the browser until it is manually cleared (by code or user).
+        <br>
+
+        <b>sessionStorage:</b> Data is stored only for the session (as long as the browser tab is open).
+    </p>
+
+    <hr>
+
+    <h3>2. Two Key Differences Between localStorage and sessionStorage:</h3>
+    <table border="2">
+        <tr>
+            <th>Feature</th>
+            <th>localStorage</th>
+            <th>sessionStorage</th>
+        </tr>
+        <tr>
+            <th>Lifetime</th>
+            <td>Permanent (until cleared)</td>
+            <td>Temporary (tab session)</td>
+        </tr>
+        <tr>
+            <th>Scope</th>
+            <td>All tabs & windows</td>
+            <td>Current tab only</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h3>3. Why is Web Storage Considered Better Than Cookies?</h3>
+    <p><b>More Storage Capacity:</b> Web Storage offers much more space (typically 5-10MB) compared to cookies (~4KB).
+        <br>
+
+        <b>No Automatic Server Transmission:</b> Data in Web Storage is not sent with every HTTP request, unlike
+        cookies, which
+        improves performance and reduces unnecessary network traffic.
+    </p>
+
+    <hr>
+
+
+    <h3>4. Can sessionStorage Share Data Across Multiple Browser Tabs? Explain.</h3>
+    <p>No, sessionStorage cannot share data across tabs</p>
+    <p>It is tab-specific, meaning each tab has its own separate sessionStorage. Opening the same website in a new tab
+        will create a new, empty sessionStorage.</p>
+
+    <hr>
+
+    <h3>5. What is the Typical Maximum Storage Capacity of localStorage and sessionStorage?</h3>
+    <p>Both localStorage and sessionStorage typically offer about 5MB per origin (domain).
+        <br>
+        This limit may vary slightly by browser, but 5MB is a common default.
+    </p>
+    <hr>
+    <hr>
+
+
+    <h2>Q2. Practical Scenarios</h2>
+
+    <h3>1. Storing an Object in localStorage</h3>
+    <!-- <script>
+        // Step 1: Create the object
+        const user = {
+            name: "Amit",
+            age: 25,
+            city: "Delhi"
+        };
+
+        localStorage.setItem("userInfo",JSON.stringify(user));
+
+        const storedUser = JSON.parse(localStorage.getItem("userInfo"));
+
+        console.log(storedUser.name); 
+        console.log(storedUser.age);  
+        console.log(storedUser.city); 
+
+    </script> -->
+
+    <hr>
+
+
+    <h3>2. Form Data in sessionStorage</h3>
+    <!-- <form id="userForm">
+        <input type="text" id="name" placeholder="Enter Name" />
+        <input type="email" id="email" placeholder="Enter Email" />
+        <button type="submit">Save</button>
+    </form> -->
+
+    <!-- <script>
+
+
+            let form = document.getElementById("userForm");
+
+            form.addEventListener("submit",() => {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+
+            sessionStorage.setItem ("name",name);
+            sessionStorage.setItem ("email",email);
+
+    })
+    </script> -->
+
+    <hr>
+
+    <h3>3.Theme Preference with localStorage</h3>
+
+    <button onclick="toggletheme()">Toggle Theme</button>
+
+    <script>
+        function toggletheme() {
+            document.body.classList.toggle("dark_mode")
+            // document.body.classList.toggle("light_mode")
+        }
+
+    </script>
+
+    <hr>
+
+
+
+</body>
+
+</html>
